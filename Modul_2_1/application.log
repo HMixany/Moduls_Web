@@ -1,0 +1,6 @@
+[ERROR] 2023-10-31 23:15:02,126: my_logger  foo: 17 - AAAAAAAAAAAAA!!!!!!!
+[ERROR] 2023-10-31 23:19:26,041: my_logger log02 foo: 17 - AAAAAAAAAAAAA!!!!!!!
+[ERROR] 2023-10-31 23:25:24,108: my_logger log03 foo: 13 - AAAAAAAAAAAAA!!!!!!!
+Hello World! У попа була собака і він її любив
+Вона з'їла кусок м'яса і він її убив
+[ERROR] 2023-10-31 23:54:39,694: my_logger log02 foo: 17 - AAAAAAAAAAAAA!!!!!!!
