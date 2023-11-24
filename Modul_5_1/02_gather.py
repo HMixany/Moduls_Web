@@ -24,7 +24,6 @@ async def main():
     return result
 
 
-
 if __name__ == '__main__':
     start = time()
     for i in range(1, 26):
