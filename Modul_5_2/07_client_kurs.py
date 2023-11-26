@@ -22,7 +22,8 @@ async def request(url: str):
 
 async def main():
     try:
-        respons = await request('')
+        respons = await request('https://api.privatbank.ua/p24api/pubinfo?exchange&coursid=5')
+        return respons
     except HttpError as err:
         print(err)
 
@@ -30,4 +31,5 @@ async def main():
 if __name__ == '__main__':
     if platform.system() == 'Windows':
         asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
-    asyncio.run(main())
+    r = asyncio.run(main())
+    print(r)

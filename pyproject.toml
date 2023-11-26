@@ -10,6 +10,7 @@ python = "^3.11"
 faker = "^20.1.0"
 requests = "^2.31.0"
 aiohttp = "^3.9.0"
+httpx = "^0.25.2"
 
 
 [build-system]
