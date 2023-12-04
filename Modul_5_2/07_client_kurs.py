@@ -9,6 +9,7 @@ CURRENCIES = [
     'AUD', 'CAD', 'CZK', 'DKK', 'HUF', 'ILS', 'JPY', 'LVL', 'LTL', 'NOK', 'SKK', 'SEK', 'CHF', 'GBP', 'BYR', 'GEL', 'PLZ'
 ]
 
+
 class HttpError(Exception):
     pass
 
