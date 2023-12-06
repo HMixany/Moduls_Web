@@ -1,30 +1,30 @@
-drop table if exists groups;
+drop table if exists groups CASCADE;
 CREATE TABLE groups (
 id SERIAL PRIMARY KEY,
 name VARCHAR(50) NOT NULL
 );
 
-drop table if exists students;
+drop table if exists students CASCADE;
 CREATE TABLE students (
 id SERIAL PRIMARY KEY,
 full_name VARCHAR(150) NOT NULL,
 group_id INTEGER REFERENCES groups(id)
 );
 
-drop table if exists teachers;
+drop table if exists teachers CASCADE;
 CREATE TABLE teachers (
 id SERIAL PRIMARY KEY,
 full_name VARCHAR(150) NOT NULL
 );
 
-drop table if exists subjects;
+drop table if exists subjects CASCADE;
 CREATE TABLE subjects (
 id SERIAL PRIMARY KEY,
 name VARCHAR(150) NOT NULL,
 teacher_id INTEGER REFERENCES teachers(id)
 );
 
-drop table if exists grades;
+drop table if exists grades CASCADE;
 CREATE TABLE grades (
 id SERIAL PRIMARY KEY,
 student_id INTEGER REFERENCES students(id),
