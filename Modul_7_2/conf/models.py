@@ -31,6 +31,7 @@ class Student(Base):
     phone = Column('cell_phone', String(100))
     address = Column(String(100))
     teacher = relationship('Teacher', secondary='teachers_to_students', back_populates='student')
+    contacts = relationship('Contact', back_populates='student', cascade='all, delete-orphan')
     # back_populates вимагає прив'язки нахрест, або треба використовувати backref
 
 # створемо гібридне(віртуальне) поле
@@ -47,7 +48,7 @@ class Contact(Base):
     email = Column(String(100))
     phone = Column('cell_phone', String(100))
     student_id = Column(Integer, ForeignKey('students.id', ondelete='CASCADE', onupdate='CASCADE'))
-    student = relationship('Student', backref='contacts')
+    student = relationship('Student', back_populates='contacts')
 
 # створемо гібридне(віртуальне) поле
     @hybrid_property
