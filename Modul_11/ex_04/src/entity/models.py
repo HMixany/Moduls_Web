@@ -1,7 +1,10 @@
 from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy import String
+from sqlalchemy.orm import DeclarativeBase
 
-from ex_04.src.database.db import Base
+
+class Base(DeclarativeBase):
+    pass
 
 
 class Todo(Base):
