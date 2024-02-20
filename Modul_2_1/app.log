@@ -1,0 +1,4 @@
+2023-10-31 11:34:20,875 - simple_example - ERROR - This is an error message
+2023-10-31 11:34:50,721 - simple_example - ERROR - This is an error message
+2023-10-31 11:34:50,721 - simple_example - ERROR - error message
+2023-10-31 11:34:50,722 - simple_example - CRITICAL - critical message
