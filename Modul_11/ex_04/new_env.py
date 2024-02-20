@@ -8,8 +8,8 @@ from sqlalchemy import pool
 
 from alembic import context
 
-from src.conf.config import config as app_config
-from src.entity.models import Base
+from ex_04.src.conf.config import config as app_config
+from ex_04.src.entity.models import Base
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
