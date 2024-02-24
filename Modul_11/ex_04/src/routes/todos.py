@@ -16,7 +16,7 @@ async def get_todos(limit: int = Query(10, ge=10, le=500), offset: int = Query(0
 
 
 @router.get("/{todo_id}", response_model=TodoResponse)
-async def get_todo(todo_id: int, db: AsyncSession = Depends(get_db)):
+async def get_todo(todo_id: int = Path(ge=1), db: AsyncSession = Depends(get_db)):
     todo = await repositories_todos.get_todo(todo_id, db)
     if todo is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="NOT FOUND")
@@ -30,10 +30,14 @@ async def create_todo(body: TodoSchema, db: AsyncSession = Depends(get_db)):
 
 
 @router.put("/{todo_id}")
-async def update_todo():
-    pass
+async def update_todo(body: TodoUpdateSchema, todo_id: int = Path(ge=1), db: AsyncSession = Depends(get_db)):
+    todo = await repositories_todos.update_todo(todo_id, body, db)
+    if todo is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="NOT FOUND")
+    return todo
 
 
-@router.delete("/{todo_id}")
-async def delete_todo():
-    pass
+@router.delete("/{todo_id}", status_code=status.HTTP_204_NO_CONTENT)
+async def delete_todo(todo_id: int = Path(ge=1), db: AsyncSession = Depends(get_db)):
+    todo = await repositories_todos.delete_todo(todo_id, db)
+    return todo
