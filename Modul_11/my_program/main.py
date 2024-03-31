@@ -1,10 +1,10 @@
 import sqlalchemy
-from fastapi import FastAPI, Path, Query, Depends, HTTPException, status, Path
+from fastapi import FastAPI, Depends, HTTPException, status, Path
 from sqlalchemy.orm import Session
 
-from db import get_db
-from models import Build
-from schema import HomeResponse, HomeSchema, PorterResponse, PorterSchema
+from my_program.src.database.db import get_db
+from my_program.src.entity.models import Build
+from src.schemas.build import HomeResponse, HomeSchema
 
 app = FastAPI()
 
